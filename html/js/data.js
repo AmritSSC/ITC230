@@ -7,7 +7,7 @@ let books = [
     { name: 'The Silence of the Lambs', author: "Thomas Harris", Year: "1988", copyright: "Yes" },
 ];
 
+//exports.getAll = books
 
-//exports.books = books
-
-exports.getAll = books
+//ES6 module:
+export const getAll = books
