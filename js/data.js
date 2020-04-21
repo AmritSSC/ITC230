@@ -9,4 +9,9 @@ let books = [
 //exports.getAll = books
 
 //ES6 module:
-export const getAll = books
+//export const getAll = books
+
+exports.getAll = () => {
+    // return a book by title
+    return books;
+}

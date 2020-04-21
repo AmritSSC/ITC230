@@ -1,16 +1,25 @@
 const http = require("http");
+const fs = require("fs");
+const bookslist = require("./js/data");
+
 http.createServer((req, res) => {
     const path = req.url.toLowerCase();
-    const fs = require("fs");
     switch (path) {
         case '/':
-            //const fs = require("fs");
-            fs.readFile("./html/home.html", (err, data) => {
-                if (err) return console.error(err);
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.end(data.toString());
-            });
+            var bookslisted = bookslist.getAll();
+            console.log(bookslisted);
+            res.writeHead(200, { 'Content-Type': 'text/plain' });
+            res.end("Number of books in our inventory: " + bookslisted.length.toString());
             break;
+
+            // case '/home':
+            //     //const fs = require("fs");
+            //     fs.readFile("./html/home.html", (err, data) => {
+            //         if (err) return console.error(err);
+            //         res.writeHead(200, { 'Content-Type': 'text/html' });
+            //         res.end(data.toString());
+            //     });
+            //     break;
 
         case '/about':
             fs.readFile("./html/about.html", (err, data) => {
@@ -19,6 +28,7 @@ http.createServer((req, res) => {
                 res.end(data.toString());
             });
             break;
+
         default:
             res.writeHead(404, { 'Content-Type': 'text/plain' });
             res.end('Not found');
