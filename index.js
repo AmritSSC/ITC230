@@ -7,19 +7,9 @@ http.createServer((req, res) => {
     switch (path) {
         case '/':
             var bookslisted = bookslist.getAll();
-            console.log(bookslisted);
             res.writeHead(200, { 'Content-Type': 'text/plain' });
             res.end("Number of books in our inventory: " + bookslisted.length.toString());
             break;
-
-            // case '/home':
-            //     //const fs = require("fs");
-            //     fs.readFile("./html/home.html", (err, data) => {
-            //         if (err) return console.error(err);
-            //         res.writeHead(200, { 'Content-Type': 'text/html' });
-            //         res.end(data.toString());
-            //     });
-            //     break;
 
         case '/about':
             fs.readFile("./html/about.html", (err, data) => {
