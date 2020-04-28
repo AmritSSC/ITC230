@@ -61,6 +61,13 @@ app.get('/details', (req, res) => {
 });
 
 // send plain text response
+app.get('/home', (req, res) => {
+    //res.type('text/plain');
+    //res.send('About page');
+    res.type('text/html');
+    res.sendFile(__dirname + '/html/home.html');
+});
+
 app.get('/about', (req, res) => {
     //res.type('text/plain');
     //res.send('About page');
