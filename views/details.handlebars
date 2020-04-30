@@ -1,6 +1,12 @@
 <h2>Welcome to <em style="color:red;">{{item}}</em> </h2>
-<p>Stuff is supposed to go here.</p>
 
 
-<b>Homepage:</b>
+{{#each book_data as |data|}}
+    {{data}}
+    <br><br>
+{{/each}}
+
+<br><br>
+
+<b>Homepage: </b> 
 <li><a href='/'>Return Home</a></li>

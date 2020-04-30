@@ -52,12 +52,14 @@ app.use(bodyParser.urlencoded({ extended: true })); // parse form submissions
 app.get('/', (req, res) => {
     //     console.log(req.query);
     var bookslisted = bookslist.getAll();
-    res.render('home', { name: req.query.name, books_list: bookslisted });
+    res.render('home', { books_list: bookslisted });
 
 });
 
 app.get('/details', (req, res) => {
-    res.render('details', { item: req.query.item });
+    //get details only of book selected:
+    var book_info = bookslist.getItem(req.query.item);
+    res.render('details', { item: req.query.item, book_data: book_info });
 });
 
 // send plain text response

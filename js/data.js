@@ -15,3 +15,10 @@ exports.getAll = () => {
     // return a book by title
     return books;
 }
+
+exports.getItem = (name) => {
+    //return a book
+    return books.find((book) => {
+        return book.name === name;
+    });
+}
