@@ -1,9 +1,9 @@
 let books = [
-    { name: 'Dracula', author: "Bram Stroker", Year: "1897", copyright: "No" },
-    { name: 'The Adventures of Tom Sawyer', author: "Mark Twain", Year: "1875", copyright: "No" },
-    { name: 'The Mysterious Affair at Styles', author: "Agatha Christie", Year: "1920", copyright: "No" },
-    { name: 'Around the World in Eighty Days', author: "Jules Verne", Year: "1872", copyright: "No" },
-    { name: 'The Silence of the Lambs', author: "Thomas Harris", Year: "1988", copyright: "Yes" },
+    { name: 'Dracula', author: "Bram Stroker", year: "1897", copyright: "No", description: "Blood thirst" },
+    { name: 'The Adventures of Tom Sawyer', author: "Mark Twain", year: "1875", copyright: "No", description: "Young Lust" },
+    { name: 'The Mysterious Affair at Styles', author: "Agatha Christie", year: "1920", copyright: "No", description: "Kinda bloodlust" },
+    { name: 'Around the World in Eighty Days', author: "Jules Verne", year: "1872", copyright: "No", description: "Explore" },
+    { name: 'The Silence of the Lambs', author: "Thomas Harris", year: "1988", copyright: "Yes", description: "Another Blood thirst" },
 ];
 
 //exports.getAll = books
