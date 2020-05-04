@@ -16,9 +16,40 @@ exports.getAll = () => {
     return books;
 }
 
+// extra credit: assignment 2
 exports.getItem = (name) => {
     //return a book
     return books.find((book) => {
         return book.name === name;
     });
+}
+
+//Start of Assignment 3:
+exports.addItem = (name) => {
+    //return a book
+    if (books.find((book) => {
+            return (book.name === name)
+        })) {
+
+        return "Book already Exists.";
+
+    } else {
+        books.push(name);
+        return "Book has been added.";
+    }
+}
+
+exports.deleteItem = (name) => {
+    //return a book
+    if (
+        books.find((book) => {
+            return book.name === name;
+        })) {
+
+        delete books.name;
+        return "Book has been deleted.";
+    } else {
+
+        return "Book is not listed";
+    }
 }

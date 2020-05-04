@@ -51,14 +51,14 @@ app.use(bodyParser.urlencoded({ extended: true })); // parse form submissions
 // send static file as response
 app.get('/', (req, res) => {
     //     console.log(req.query);
-    var bookslisted = bookslist.getAll();
+    let bookslisted = bookslist.getAll();
     res.render('home', { books_list: bookslisted });
 
 });
 
 app.get('/details', (req, res) => {
     //get details only of book selected:
-    var book_info = bookslist.getItem(req.query.item);
+    let book_info = bookslist.getItem(req.query.item);
     res.render('details', { item: req.query.item, book_data: book_info });
 });
 
