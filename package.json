@@ -15,6 +15,7 @@
     "package.json": "^2.0.1"
   },
   "devDependencies": {
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "mocha": "^7.1.2"
   }
 }
