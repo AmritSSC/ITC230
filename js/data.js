@@ -25,31 +25,33 @@ exports.getItem = (name) => {
 }
 
 //Start of Assignment 3:
-exports.addItem = (name) => {
-    //return a book
-    if (books.find((book) => {
-            return (book.name === name)
-        })) {
+exports.addItem = (bookToAdd) => {
 
-        return "Book already Exists.";
+    // book added mustbean object, so find the name attribute of object
+    let foundBook = books.findIndex((book) => {
+        return book.name === bookToAdd.name;
+    });
 
-    } else {
-        books.push(name);
-        return "Book has been added.";
+    //add book if name doesn't exist
+    if (foundBook < 0) {
+        books.push({ bookToAdd });
+
     }
+    //return status of book existance
+    return { added: foundBook < 0 };
+
 }
 
-exports.deleteItem = (name) => {
-    //return a book
-    if (
-        books.find((book) => {
-            return book.name === name;
-        })) {
 
-        delete books.name;
-        return "Book has been deleted.";
-    } else {
-
-        return "Book is not listed";
+exports.deleteItem = (bookToDelete) => {
+    //find book to delete by name
+    let foundIndex = books.findIndex((book) => {
+        return book.name === bookToDelete;
+    });
+    // if book exists:
+    if (foundIndex > -1) {
+        books.splice(foundIndex, 1);
     }
+    //return proof of book existance
+    return { deleted: foundIndex > -1 };
 }
